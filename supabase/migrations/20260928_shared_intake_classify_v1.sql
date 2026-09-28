@@ -1,0 +1,20 @@
+-- Applied to GR-OS on 2026-09-28 as migrations shared_intake_classify_v1, shared_intake_classify_v1_perf and
+-- shared_intake_classify_v1_rules2. The live definition is authoritative; export it with:
+--   select pg_get_functiondef('public.shared_classify_intake(uuid,uuid,text,text)'::regprocedure);
+-- Rules, first match wins (files only, folders stay unclassified):
+--  R1  junk            .DS_Store, Thumbs.db, desktop.ini, ~$ Office temp, ._ AppleDouble, Icon\r
+--  R2  exclude_private /Personal/
+--  R3  review          /_to_delete/  (confirm delete)
+--  R4  review          DECISION CANON  (carry forward still-valid decisions)
+--  R5  archive_rules   _STATE.md, _HISTORY.md, _ARTIFACTS.md, _DECISIONS.md, _WORK_LOCK.md, _ENROLLMENT_LOCK.md, _HANDOFF.md, _STATE-*/_WORK_LOCK-*/_HANDOFF-*
+--  R5b review          SKILL.md or Skills_Source/  (keep only if newer than the installed skill)
+--  R6  archive_rules   /System/, CLAUDE.md, AGENTS.md, START HERE.md, the June migration note, PASTE THIS / INSTALL THIS / OVERWRITE /
+--                      playbook / ORCHESTRATOR / CANON-QUEUE / LEARNINGS-REGISTER / OPERATOR CARD / FOUNDATION AUDIT / CLEANUP TODO /
+--                      MY INSTRUCTIONS / MODE GATE / SYSTEM-WRITER / BOOT PROMPT names; Session-Mode-OptIn, Instructions, SYSTEM_REWORK,
+--                      Pipeline_Packs, Engines folders.  Destination: /Shared System/_Legacy Archive (inactive)/iCloud Claude System/...
+--  R7  review          _Inbox, _Staging, _Archive, _Duplicates, TO BE FILED..., _superseded, _not-used folders
+--  R8  already_in_cloud  identical SHA-256 already in Operations (outside the intake)
+--  R9  duplicate       identical SHA-256 elsewhere in the same upload (shortest path kept)
+--  R10 review          same relative path already in Operations with different content
+--  R11 review          /Library/, /Remote Work Info/, /Documents/, /GMBCrush_Cycles/, loose top-level files
+--  R12 move            everything else; destination mirrors the old path (Claude outputs -> /_History/Claude outputs)
