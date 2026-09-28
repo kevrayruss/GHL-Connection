@@ -1,0 +1,2 @@
+-- Applied 2026-09-28: shared_fix_search_path_and_guide_v1_2_1 (search_path on 5 shared_private helpers; guide 1.2.1 active)
+-- and shared_context_summary_v1 (read-only bounded summary for session start). Export live definitions with pg_get_functiondef.

@@ -44,3 +44,9 @@ Saves from an expired or superseded claim, or from an out-of-date base version, 
   retiring older writer workflows (coordinated with ChatGPT), and ChatGPT-side acceptance tests.
 - Migration: Kevin's iCloud "Claude System" folder is uploading to *Operations / Shared System / iCloud Intake 2026-09-28*.
   Inventory runs after the upload completes.
+
+## Added 2026-09-28 evening
+- Operating guide v1.2.1 active (Office/PDF/image saves, iCloud retired). `docs/operating-guide-v1.2.md` mirrors it.
+- `shared_context_summary()` + "Read Shared Context" `zp3iUGV2EJ11LP0a` now returns a compact `summary` (guide, handoffs, tasks, active claims, events, migration scans).
+- Handoff Inbox Doc `9h6SutFqgmsHaifW` (published, hourly) rewrites *Operations/Shared System/Handoff Inbox (auto-updated, do not edit)*.
+- Cleanup proposal: `docs/cleanup-proposal.md` (nothing removed yet).
