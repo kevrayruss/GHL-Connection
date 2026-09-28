@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__LeadConnector__search_operations",
+      "mcp__LeadConnector__describe_operation",
+      "mcp__LeadConnector__list_locations"
+    ]
+  }
+}
