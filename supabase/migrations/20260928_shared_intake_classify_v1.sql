@@ -18,3 +18,10 @@
 --  R10 review          same relative path already in Operations with different content
 --  R11 review          /Library/, /Remote Work Info/, /Documents/, /GMBCrush_Cycles/, loose top-level files
 --  R12 move            everything else; destination mirrors the old path (Claude outputs -> /_History/Claude outputs)
+
+-- v2 (migrations shared_intake_classify_v2 + _v2_perf, 2026-09-28):
+--   signature shared_classify_intake(p_scan, p_baseline, p_intake_prefix, p_intake_roots text[], p_legacy uuid)
+--   * several intake roots in one scan (part 1 + part 2); R9 duplicates prefer earlier roots
+--   * R6 also matches the renamed "System (RETIRED ...)" folder
+--   * legacy_status / legacy_match_path: identical | different_version | not_in_legacy vs the old Company/Claude System drive
+--   * service_role statement_timeout raised to 60s so classification of ~16k files completes
