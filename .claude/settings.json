@@ -3,7 +3,22 @@
     "allow": [
       "mcp__LeadConnector__search_operations",
       "mcp__LeadConnector__describe_operation",
-      "mcp__LeadConnector__list_locations"
+      "mcp__LeadConnector__list_locations",
+      "mcp__n8n__execute_workflow",
+      "mcp__n8n__get_workflow_execution",
+      "mcp__n8n__search_workflow_executions",
+      "mcp__n8n__get_workflow_details",
+      "mcp__n8n__search_workflows",
+      "mcp__n8n__search_data_tables",
+      "mcp__n8n__get_data_table_rows",
+      "mcp__n8n__validate_workflow",
+      "mcp__Supabase-fc8715ce__execute_sql",
+      "mcp__Supabase-fc8715ce__list_tables",
+      "mcp__Supabase-fc8715ce__list_migrations",
+      "mcp__Google_Drive__search_files",
+      "mcp__Google_Drive__read_file_content",
+      "mcp__Google_Drive__download_file_content",
+      "mcp__Google_Drive__get_file_metadata"
     ]
   }
 }
