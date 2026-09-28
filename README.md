@@ -25,7 +25,7 @@ All are unpublished and run only through authenticated n8n MCP execution.
 | Workflow | ID | Purpose |
 |---|---|---|
 | Growth Revo - File Control (claims and versions) | `M3VcvNVNtijfXgGp` | `register`, `claim`, `renew`, `release`, `commit` against the GR-OS functions. |
-| Growth Revo - Managed Save (locked, verified) | `uTSVDZhSemxglEq1` | Checks the caller holds the current claim, uploads a new immutable version object to *Shared System / _Managed Versions*, verifies the stored SHA-256, then promotes it. Text types up to 5 MiB. |
+| Growth Revo - Managed Save (locked, verified) | `uTSVDZhSemxglEq1` | Checks the caller holds the current claim, uploads a new immutable version object to *Shared System / _Managed Versions*, verifies the stored SHA-256, then promotes it. Text (`content`) or exact bytes (`content_base64`) for text, Word/Excel/PowerPoint, PDF and PNG/JPEG/GIF/WebP, up to 5 MiB. |
 | Growth Revo - Intake Inventory Scan | `kRrq58ZjchkwmKAj` | Lists the Operations drive, keeps everything under a given root folder, and records each file in `shared_intake_files`. Read-only on Drive. |
 
 ## How an AI edits a managed file
@@ -40,7 +40,7 @@ Saves from an expired or superseded claim, or from an out-of-date base version, 
 ## Status (2026-09-28)
 
 - Task 03 locks: built; Claude-side tests passed (n8n executions 324–339).
-- Task 04 single writer: Managed Save works for text files. Still open: Office/PDF/binary and native Google Docs support,
+- Task 04 single writer: Managed Save works for text, Office, PDF and image files (tests: text v3/v6, docx v4, png v5, executions 337-351). Still open: native Google Docs support,
   retiring older writer workflows (coordinated with ChatGPT), and ChatGPT-side acceptance tests.
 - Migration: Kevin's iCloud "Claude System" folder is uploading to *Operations / Shared System / iCloud Intake 2026-09-28*.
   Inventory runs after the upload completes.
