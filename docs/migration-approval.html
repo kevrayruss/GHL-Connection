@@ -1,0 +1,205 @@
+<title>iCloud Migration Approval</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: one reading column; each decision group is a ruled block with a code, a count, and what happens. */
+:root{
+  --bg:#f5f6f4; --panel:#ffffff; --fg:#1c2421; --muted:#5d6a65; --line:#d9dfdb;
+  --accent:#1f6f5c; --accent-soft:#e2f0eb; --warn:#9a5b00; --warn-soft:#fbefd9; --stop:#a33a2b; --stop-soft:#f8e3df;
+  --sans:"Instrument Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#121715; --panel:#1a211e; --fg:#e4ebe7; --muted:#9aa8a2; --line:#2c3632;
+  --accent:#5cc2a4; --accent-soft:#16332a; --warn:#e5a54a; --warn-soft:#33270f; --stop:#ec8a7b; --stop-soft:#3a1d18; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#121715; --panel:#1a211e; --fg:#e4ebe7; --muted:#9aa8a2; --line:#2c3632;
+  --accent:#5cc2a4; --accent-soft:#16332a; --warn:#e5a54a; --warn-soft:#33270f; --stop:#ec8a7b; --stop-soft:#3a1d18; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font:15px/1.55 var(--sans);margin:0}
+.wrap{max-width:860px;margin:0 auto;padding-inline:16px;padding-block:32px 64px;display:grid;gap:28px}
+h1{font-size:1.9rem;line-height:1.15;margin:0;text-wrap:balance;letter-spacing:-.01em}
+h2{font-size:1.15rem;margin:0;text-wrap:balance}
+p{margin:0;max-width:68ch}
+.muted{color:var(--muted)}
+.num{font-family:var(--mono);font-variant-numeric:tabular-nums}
+.eyebrow{font-size:.75rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:600}
+header{display:grid;gap:10px}
+.facts{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:.9rem;color:var(--muted)}
+.bar{display:flex;height:14px;border-radius:3px;overflow:hidden;border:1px solid var(--line)}
+.bar span{display:block;height:100%}
+.legend{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:.82rem;color:var(--muted)}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:6px;vertical-align:-1px}
+.how{background:var(--accent-soft);border-radius:6px;padding:14px 16px;display:grid;gap:6px}
+.how code{font-family:var(--mono);font-size:.9em}
+.group{background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:18px;display:grid;gap:12px}
+.ghead{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 14px}
+.code{font-family:var(--mono);font-weight:500;background:var(--fg);color:var(--bg);padding:1px 7px;border-radius:3px;font-size:.85rem}
+.count{margin-left:auto;font-family:var(--mono);font-variant-numeric:tabular-nums;color:var(--muted);font-size:.9rem}
+.pill{font-size:.75rem;font-weight:600;padding:2px 8px;border-radius:99px}
+.pill.go{background:var(--accent-soft);color:var(--accent)}
+.pill.ask{background:var(--warn-soft);color:var(--warn)}
+.pill.del{background:var(--stop-soft);color:var(--stop)}
+.action{font-weight:500}
+.tbl{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:.88rem}
+th,td{text-align:left;padding:6px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-weight:600;color:var(--muted);font-size:.78rem;text-transform:uppercase;letter-spacing:.05em}
+td.r,th.r{text-align:right;font-family:var(--mono);font-variant-numeric:tabular-nums;white-space:nowrap}
+details summary{cursor:pointer;color:var(--accent);font-weight:500}
+details[open] summary{margin-bottom:8px}
+.note{font-size:.88rem;color:var(--muted)}
+.caution{border-left:3px solid var(--warn);padding-left:12px;font-size:.9rem}
+footer{font-size:.82rem;color:var(--muted);display:grid;gap:4px}
+a{color:var(--accent)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+</style>
+
+<div class="wrap">
+<header>
+  <div class="eyebrow">Growth Revo · Operations drive · decision sheet</div>
+  <h1>What happens to the iCloud "Claude System" files</h1>
+  <p>The Drive for Mac copy has arrived: <span class="num">14,816</span> files, <span class="num">5.37 GB</span> (your Mac showed <span class="num">16,107</span> items including folders; the copy has <span class="num">16,104</span>). Every file was fingerprinted (SHA-256) and compared against everything already in Operations and against the old Company/Claude System drive. Nothing has been moved yet.</p>
+  <div class="facts"><span>Snapshot: 2026-09-29 01:20 UTC</span><span>Intake scan <span class="num">068b68d4</span></span><span>Operations baseline <span class="num">4c84d46b</span></span><span>Classified by n8n run <span class="num">382</span></span></div>
+</header>
+
+<section style="display:grid;gap:10px" aria-label="Overview">
+  <div class="bar" role="img" aria-label="Share of files by outcome">
+    <span style="width:67.3%;background:var(--muted)"></span>
+    <span style="width:27.3%;background:var(--accent)"></span>
+    <span style="width:2.4%;background:var(--line)"></span>
+    <span style="width:2.0%;background:var(--warn)"></span>
+    <span style="width:1.1%;background:var(--stop)"></span>
+  </div>
+  <div class="legend">
+    <span><i style="background:var(--muted)"></i>Already in Operations 9,966</span>
+    <span><i style="background:var(--accent)"></i>Move in 4,045</span>
+    <span><i style="background:var(--line)"></i>Duplicate copies 349</span>
+    <span><i style="background:var(--warn)"></i>Needs your call 295</span>
+    <span><i style="background:var(--stop)"></i>Archive old rules 160 · private 1</span>
+  </div>
+</section>
+
+<div class="how" style="background:var(--accent-soft)"><strong>Done 2026-09-29 03:20 UTC</strong><p>G1–G4 approved by Kevin and carried out: 4,289 files moved into Operations and verified by fingerprint (scan 6fabb9eb, 0 missing, 0 changed). G6 personal file left out. Nothing deleted. Still open: G5 (your call) and G7 (empty the intake, double confirmation).</p></div>
+<div class="how">
+  <strong>How to approve</strong>
+  <p>Reply in chat with the codes, for example <code>approve G1 G2 G3 G4 G6</code>, or <code>approve G2 except Streamline</code>. Anything that deletes files (<span class="pill del">delete</span>) needs you to confirm twice. Items marked <span class="pill ask">your call</span> get a short list of questions from me first.</p>
+</div>
+
+<article class="group" id="g2">
+  <div class="ghead"><span class="code">G2</span><h2>Move business files into Operations</h2><span class="pill go">recommended</span><span class="count">4,045 files · 4.19 GB</span></div>
+  <p class="action">These files exist nowhere else in Operations. They move out of the intake folder into the same folder path in Operations (for example <span class="num">iCloud Intake/Clients/SVdP/…</span> becomes <span class="num">Clients/SVdP/…</span>). Moving keeps each file's Drive ID, so links still work. "Claude outputs" goes under <span class="num">_History</span>.</p>
+  <div class="tbl"><table>
+    <thead><tr><th>Destination in Operations</th><th class="r">Files</th><th class="r">MB</th></tr></thead>
+    <tbody>
+      <tr><td>Clients/Streamline Solutions</td><td class="r">719</td><td class="r">2,648</td></tr>
+      <tr><td>Company/08_Workshop_RnD</td><td class="r">487</td><td class="r">32</td></tr>
+      <tr><td>Clients/SVdP</td><td class="r">456</td><td class="r">51</td></tr>
+      <tr><td>Clients/Jerry_Kuykendall</td><td class="r">374</td><td class="r">40</td></tr>
+      <tr><td>Prospects/Bin-Masters_Reno-NV</td><td class="r">322</td><td class="r">7</td></tr>
+      <tr><td>Delivery/GBP_GMB_Crush</td><td class="r">277</td><td class="r">508</td></tr>
+      <tr><td>Company/02_Offers_and_Sales</td><td class="r">241</td><td class="r">61</td></tr>
+      <tr><td>Training/06_Training_Library</td><td class="r">213</td><td class="r">47</td></tr>
+      <tr><td>Prospects/ExtremeClean_Macon-GA</td><td class="r">185</td><td class="r">49</td></tr>
+      <tr><td>Clients/RLES</td><td class="r">144</td><td class="r">17</td></tr>
+      <tr><td>Company/10_Admin_and_Legal</td><td class="r">101</td><td class="r">429</td></tr>
+      <tr><td>Clients/RLC</td><td class="r">84</td><td class="r">94</td></tr>
+      <tr><td>Clients/Stewart_Barnes</td><td class="r">83</td><td class="r">4</td></tr>
+      <tr><td>_History/Claude outputs and 12 pre-enrollment zips</td><td class="r">60</td><td class="r">23</td></tr>
+      <tr><td>Prospects/Beck-Disposal_St-Louis-MO</td><td class="r">37</td><td class="r">119</td></tr>
+      <tr><td>Clients/Ultra Luxe Landscaping</td><td class="r">28</td><td class="r">47</td></tr>
+      <tr><td>Delivery: Local-SEO Content Engine, GBP Mgmt System, Site_Build, others</td><td class="r">141</td><td class="r">3</td></tr>
+      <tr><td>Other Prospects, Company and Clients folders</td><td class="r">93</td><td class="r">6</td></tr>
+    </tbody>
+  </table></div>
+  <p class="note">146 of these share a file name with a different version on the old Company drive. The iCloud copy is the newer home (after June 29), so it wins; the old drive is not touched.</p>
+</article>
+
+<article class="group" id="g1">
+  <div class="ghead"><span class="code">G1</span><h2>Already in Operations: don't copy</h2><span class="pill go">recommended</span><span class="count">9,966 files · 940 MB</span></div>
+  <p class="action">Byte-for-byte identical files already live in Operations. Nothing is copied. The intake copies stay put until the very end (see G7).</p>
+  <div class="tbl"><table>
+    <thead><tr><th>From the iCloud copy</th><th>Already in Operations at</th><th class="r">Files</th></tr></thead>
+    <tbody>
+      <tr><td>Delivery/GBP_GMB_Crush</td><td>Training/GMB Crush/…/Source Archive</td><td class="r">9,344</td></tr>
+      <tr><td>Prospects</td><td>Clients</td><td class="r">447</td></tr>
+      <tr><td>Company</td><td>Company</td><td class="r">159</td></tr>
+      <tr><td>Clients, Claude outputs, other</td><td>Clients</td><td class="r">16</td></tr>
+    </tbody>
+  </table></div>
+  <p class="caution">84 of these are tiny files (under 64 bytes, e.g. empty notes). A tiny file can match an unrelated file by accident, so these move with G2 instead of being skipped. Cheap and safe.</p>
+</article>
+
+<article class="group" id="g3">
+  <div class="ghead"><span class="code">G3</span><h2>Duplicate copies inside the iCloud folder</h2><span class="pill go">recommended</span><span class="count">349 files · 203 MB</span></div>
+  <p class="action">Same bytes stored more than once in the old system. The first copy moves with G2; the extra copies are not moved and end up in G7.</p>
+  <details><summary>Examples</summary>
+    <div class="tbl"><table><thead><tr><th>Extra copy</th><th>Kept copy</th></tr></thead><tbody>
+      <tr><td>Company/…/Prospect_Research/Beck_Disposal/01_Reports_GMB_Crush/geogrid-project-beck-2026-06-28-grid10-3mi-7kw.json</td><td>Prospects/Beck-Disposal_St-Louis-MO/03_GBP_Local_Map/R12_GeoGrid_7kw-3mi-grid10_GMBCrush.json</td></tr>
+      <tr><td>Delivery/GBP_GMB_Crush/_SYSTEM/…/pr04-pr05-audio-parity/PR04-source.mov</td><td>…/PR04-source.m4a (same bytes, renamed)</td></tr>
+    </tbody></table></div>
+  </details>
+</article>
+
+<article class="group" id="g4">
+  <div class="ghead"><span class="code">G4</span><h2>Archive the old rules and status files</h2><span class="pill go">recommended</span><span class="count">160 files · 2 MB</span></div>
+  <p class="action">They move to <span class="num">Shared System/_Legacy Archive (inactive)/iCloud Claude System</span>, keeping their folder layout. No AI treats them as instructions again. Project status from the <span class="num">_STATE</span> files is being copied into the shared record first.</p>
+  <div class="tbl"><table>
+    <thead><tr><th>What</th><th class="r">Files</th></tr></thead>
+    <tbody>
+      <tr><td>Old project status and lock files (_STATE, _WORK_LOCK, _HANDOFF, _DECISIONS…) in Clients, Prospects, Company, Delivery</td><td class="r">103</td></tr>
+      <tr><td>The System folder: old rules, adapters, templates, mode gates</td><td class="r">39</td></tr>
+      <tr><td>Instruction and playbook files elsewhere (Delivery Pipeline_Packs and Engines, client CLAUDE.md files, AGENTS.md at the top)</td><td class="r">18</td></tr>
+    </tbody>
+  </table></div>
+</article>
+
+<article class="group" id="g5">
+  <div class="ghead"><span class="code">G5</span><h2>Needs your call</h2><span class="pill ask">your call</span><span class="count">295 files · 40 MB</span></div>
+  <p class="action">These stay in the intake until you decide. I'll ask one short question per row.</p>
+  <div class="tbl"><table>
+    <thead><tr><th>Group</th><th>Question</th><th class="r">Files</th></tr></thead>
+    <tbody>
+      <tr><td>Remote Work Info (resumes, job search, asset kit)</td><td>Business or personal? If personal, keep it out like G6.</td><td class="r">85</td></tr>
+      <tr><td>Skill source files (Library/Skills_Source, GMB Crush, AI Studio)</td><td>Keep only the ones newer than the installed skills?</td><td class="r">67</td></tr>
+      <tr><td>Inbox, staging, _Archive and _Duplicates piles (Training, SVdP, Admin, Sales…)</td><td>Sort into their projects, or archive as-is?</td><td class="r">91</td></tr>
+      <tr><td>Library (AI Majic, Ubersuggest, pipeline and decision docs)</td><td>Keep as the procedure library in Operations?</td><td class="r">25</td></tr>
+      <tr><td>Documents/Codex (HighLevel expense analysis) and a mail export at the top</td><td>Which project do these belong to?</td><td class="r">15</td></tr>
+      <tr><td>GMBCrush_Cycles (ExtremeClean)</td><td>File under Prospects/ExtremeClean_Macon-GA?</td><td class="r">10</td></tr>
+      <tr><td>_to_delete (4 old bundles and one hand-built JSON, 2.8 MB)</td><td><span class="pill del">delete</span> You already marked these. Delete?</td><td class="r">5</td></tr>
+    </tbody>
+  </table></div>
+</article>
+
+<article class="group" id="g6">
+  <div class="ghead"><span class="code">G6</span><h2>Private: keep out of the business drive</h2><span class="pill go">recommended</span><span class="count">1 file</span></div>
+  <p class="action">One file in the Personal folder (a family medical note). It is not moved into Operations. Tell me where it should live instead (for example your own My Drive).</p>
+</article>
+
+<article class="group" id="g7">
+  <div class="ghead"><span class="code">G7</span><h2>Empty the intake folder at the end</h2><span class="pill del">delete</span><span class="count">~10,300 files left</span></div>
+  <p class="action">After G2 through G6 are done and a fresh fingerprint check shows every G1 and G3 file still has its twin in Operations, the intake folder is moved to Drive trash (recoverable for 30 days). Double confirmation required. Not before you have turned off Drive for Mac syncing.</p>
+</article>
+
+<section class="group" id="cloud">
+  <div class="ghead"><span class="code">C</span><h2>Cloud cleanup (from the cleanup proposal)</h2><span class="count">separate approval</span></div>
+  <div class="tbl"><table>
+    <thead><tr><th>Code</th><th>Item</th><th>Proposed</th></tr></thead>
+    <tbody>
+      <tr><td class="num">A1</td><td>Old "WHAT'S WHERE" guide on the Company/Claude System drive</td><td>Add a RETIRED banner, then archive</td></tr>
+      <tr><td class="num">A2–A5</td><td>Four Sept 27 upload test files in Shared System</td><td><span class="pill del">delete</span> Trash</td></tr>
+      <tr><td class="num">A6</td><td>Operations Editor Check (Sept 8 test files)</td><td>Archive</td></tr>
+      <tr><td class="num">A7</td><td>Superseded Compaction SaaS runbook</td><td>Archive</td></tr>
+      <tr><td class="num">A8</td><td>Partial browser upload in Shared System</td><td>No longer in Operations (removed when you restarted). Nothing to do.</td></tr>
+      <tr><td class="num">A9</td><td>Six Managed Save test versions</td><td><span class="pill del">delete</span> Trash (both AIs' tests have passed)</td></tr>
+      <tr><td class="num">B1–B5</td><td>Five inactive n8n test workflows</td><td>Archive (undoable)</td></tr>
+      <tr><td class="num">C1</td><td>About 40 stale handoffs, mostly ChatGPT checkpoints</td><td>Close with a note naming what replaced them; ChatGPT agrees first</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<footer>
+  <span>Source: GR-OS tables shared_intake_scans and shared_intake_files. Rules R1–R12 are in the repo file supabase/migrations/20260928_shared_intake_classify_v1.sql.</span>
+  <span>The Mac-to-Drive gap is 3 items and about 2 MB, likely hidden Mac files. I re-check it before any move.</span>
+</footer>
+</div>
