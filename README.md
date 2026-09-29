@@ -50,3 +50,4 @@ Saves from an expired or superseded claim, or from an out-of-date base version, 
 - `shared_context_summary()` + "Read Shared Context" `zp3iUGV2EJ11LP0a` now returns a compact `summary` (guide, handoffs, tasks, active claims, events, migration scans).
 - Handoff Inbox Doc `9h6SutFqgmsHaifW` (published, hourly) rewrites *Operations/Shared System/Handoff Inbox (auto-updated, do not edit)*.
 - Cleanup proposal: `docs/cleanup-proposal.md` (nothing removed yet).
+- ChatGPT acceptance of File Control passed (chatgpt-work-cloud, executions 363-370, handoff 371). Its finding (stale-base save uploaded an orphan object before rejection) is fixed: Managed Save now checks the base version before uploading (Claude regression 373 refused with no upload, 374 committed v7).

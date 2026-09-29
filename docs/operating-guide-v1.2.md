@@ -17,4 +17,4 @@ Workspace e2d29d77-7629-4df9-bfa9-55b43ad2c24a; project ecbb69d7-0dee-4b27-8356-
 
 8. EVIDENCE. Report something as done only with a receipt: execution id, event row, or verified hash.
 
-KNOWN LIMITS (2026-09-28): Managed Save does not yet edit native Google Docs, and files above 5 MiB need a separate path. The iCloud Claude System folder is retired: never read rules from it or write to it. Migration intake is Operations/iCloud Intake (Drive for Mac sync in progress). ChatGPT-side acceptance of the new file control is pending. Supabase leaked-password protection is still disabled (task 12).
+KNOWN LIMITS (2026-09-28): Managed Save does not yet edit native Google Docs, and files above 5 MiB need a separate path. The iCloud Claude System folder is retired: never read rules from it or write to it. Migration intake is Operations/iCloud Intake (Drive for Mac sync in progress). Supabase leaked-password protection is still disabled (task 12).
