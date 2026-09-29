@@ -49,3 +49,6 @@ Archiving an n8n workflow keeps its history and can be undone.
 | D2 | Cowork settings, ChatGPT and Claude project instructions | Replace old instructions with the iCloud-retired notice |
 | D3 | Drive for Mac | Stop syncing Operations after the intake copy is complete |
 | D4 | Supabase dashboard, project GR-OS, Authentication, Password security | Turn on "Leaked password protection" (task 12) |
+
+## Done
+- 2026-09-28: B6, B7, B8 retired after Kevin confirmed twice (archived n0HjPSaIt02bZU6X, 1PJ4DdoW9vonOwOP, WWziKK9tP8GgcO4Q; unpublished 0bbiVAeN3m90O9in).
