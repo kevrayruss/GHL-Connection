@@ -61,3 +61,7 @@ Saves from an expired or superseded claim, or from an out-of-date base version, 
   to 6/s after Drive quota 403s, which were retried). Verification scan 6fabb9eb: 4,289/4,289 at planned path with
   identical SHA-256, 0 missing. 10,527 files remain in Operations/iCloud Intake (G1 9,882 + G3 349 + G5 295 + private 1).
   Nothing deleted. G5 decisions and G7 (trash intake, double confirmation) pending.
+- G5 follow-up (Kevin: "clean up duplicates, not delete"): 233 unique G5 files moved into Operations at their same paths
+  (`20260929_intake_move_g5_unique.sql`, n8n 424-429). Verification scan c1155834: 4,522/4,522 moved files at planned path
+  with identical SHA-256. Operations/iCloud Intake now holds 10,294 files: 10,293 have an identical copy elsewhere in
+  Operations; the only unique file left is the one Personal file (kept out of the business drive). Nothing deleted.
