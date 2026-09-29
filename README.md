@@ -51,3 +51,13 @@ Saves from an expired or superseded claim, or from an out-of-date base version, 
 - Handoff Inbox Doc `9h6SutFqgmsHaifW` (published, hourly) rewrites *Operations/Shared System/Handoff Inbox (auto-updated, do not edit)*.
 - Cleanup proposal: `docs/cleanup-proposal.md` (nothing removed yet).
 - ChatGPT acceptance of File Control passed (chatgpt-work-cloud, executions 363-370, handoff 371). Its finding (stale-base save uploaded an orphan object before rejection) is fixed: Managed Save now checks the base version before uploading (Claude regression 373 refused with no upload, 374 committed v7).
+
+## Added 2026-09-29
+- Drive for Mac copy of iCloud "Claude System" complete (scan 068b68d4, re-verified by 6744c0ef: identical).
+- Project status from 30 old `_STATE.md` files rescued into `shared_projects` (`20260929_project_status_rescue.sql`).
+- Task 09 inventory: `docs/scheduled-jobs-inventory.md`. Approval page: `docs/migration-approval.html`.
+- Kevin approved G1-G4 (G6 personal left out). n8n "Intake Move (approved plan only)" `mlEaxEpvKsefPe6K`
+  (`20260929_shared_intake_move_v1.sql`) created 589 folders and moved 4,289 files (executions 386-411; throttled
+  to 6/s after Drive quota 403s, which were retried). Verification scan 6fabb9eb: 4,289/4,289 at planned path with
+  identical SHA-256, 0 missing. 10,527 files remain in Operations/iCloud Intake (G1 9,882 + G3 349 + G5 295 + private 1).
+  Nothing deleted. G5 decisions and G7 (trash intake, double confirmation) pending.
